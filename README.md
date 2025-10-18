@@ -183,7 +183,7 @@ It doesn’t just find answers — it understands them.
 Whether mapping travel plans or analyzing code vulnerabilities, hybrid reasoning is the bridge between data and true understanding.
 
 📧 Contact:
-Mente Rama Naga Kowshik
-✉️ [2200031960cseh@gmail.com]
-💼 GitHub: github.com/kowshik-04
-🌐 LinkedIn: linkedin.com/in/kowshik-04
+- Mente Rama Naga Kowshik
+- ✉️ [2200031960cseh@gmail.com]
+- 💼 GitHub: github.com/kowshik-04
+- 🌐 LinkedIn: linkedin.com/in/kowshik-04

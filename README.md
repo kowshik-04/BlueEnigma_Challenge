@@ -20,28 +20,7 @@ The assistant retrieves semantically similar locations from Pinecone, enriches t
 
 ## 🧩 Architecture  
 
-User Query
-  │
-  ▼
-OpenAI Embedding → Vector Representation
-  │
-  ▼
-Pinecone (Semantic Search)
-  │
-  ▼
-Top-k Semantic Matches
-  │
-  ▼
-Neo4j (Graph Reasoning)
-  │
-  ▼
-Combined Context (Vector + Graph)
-  │
-  ▼
-OpenAI Chat Model (Reasoning & Generation)
-  │
-  ▼
-Final Context-Aware Answer
+User Query -> OpenAI Embedding → Vector Representation -> Pinecone (Semantic Search) -> Top-k Semantic Matches -> Neo4j (Graph Reasoning) -> Combined Context (Vector + Graph) -> OpenAI Chat Model (Reasoning & Generation) -> Final Context-Aware Answer
 
 
 ## 🧠 Core Components  
@@ -78,21 +57,20 @@ Final Context-Aware Answer
 ### 1️⃣ Clone the Repository
 git clone https://github.com/<your-repo>/BlueEnigma_HybridAI.git
 cd BlueEnigma_HybridAI
-2️⃣ Create a Virtual Environment
-bash
-Copy code
+
+### 2️⃣ Create a Virtual Environment
 python -m venv venv
 source venv/bin/activate    # macOS/Linux
 venv\Scripts\activate       # Windows
-3️⃣ Install Dependencies
-bash
-Copy code
+
+
+### 3️⃣ Install Dependencies
 pip install -r requirements.txt
-4️⃣ Configure Environment Variables
+
+### 4️⃣ Configure Environment Variables
 Create a .env file in the root directory:
 
-ini
-Copy code
+
 NEO4J_URI=bolt://localhost:7687
 NEO4J_USER=neo4j
 NEO4J_PASSWORD=your_password
@@ -103,25 +81,27 @@ PINECONE_API_KEY=pcsk_xxxxxx
 PINECONE_ENV=us-east-1
 PINECONE_INDEX_NAME=vietnam-travel
 PINECONE_VECTOR_DIM=1536
+
+
 🧩 How to Run
 Step 1: Load Data into Neo4j
-
 python load_to_neo4j.py
+
 ✅ Loads dataset (vietnam_travel_dataset.json) as nodes and relationships.
 
 Step 2: Visualize Graph
-
 python visualize_graph.py
+
 ✅ Generates graph visualization (neo4j_viz.html).
 
 Step 3: Upload Embeddings to Pinecone
-
 python pinecone_upload.py
+
 ✅ Embeds and uploads all items as vectors.
 
 Step 4: Run Hybrid Chat
-
 python hybrid_chat.py
+
 ✅ Start interacting:
 
 Enter your travel question: create a romantic 4 day itinerary for Vietnam
@@ -140,6 +120,7 @@ Day 1 – Explore Hoi An’s lantern-lit streets...
 Day 2 – Visit Da Lat’s waterfalls...
 Day 3 – Relax at Phu Quoc Beach...
 Day 4 – Sunset dinner cruise before departure.
+
 🧠 Design Highlights
 Retry & Error Handling – Handles OpenAI rate limits gracefully
 

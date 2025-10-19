@@ -56,21 +56,24 @@ User Query -> OpenAI Embedding → Vector Representation -> Pinecone (Semantic S
 
 ### 1️⃣ Clone the Repository
 `git clone https://github.com/kowshik-04/BlueEnigma_Challenge.git`
+
 `cd BlueEnigma_HybridAI`
 
 ### 2️⃣ Create a Virtual Environment
-python -m venv venv
-source venv/bin/activate    # macOS/Linux
-venv\Scripts\activate       # Windows
+`python -m venv venv`
+
+`source venv/bin/activate`    # macOS/Linux
+
+`venv\Scripts\activate`      # Windows
 
 
 ### 3️⃣ Install Dependencies
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ### 4️⃣ Configure Environment Variables
 Create a .env file in the root directory:
 
-
+```
 NEO4J_URI=bolt://localhost:7687
 NEO4J_USER=neo4j
 NEO4J_PASSWORD=your_password
@@ -81,26 +84,26 @@ PINECONE_API_KEY=pcsk_xxxxxx
 PINECONE_ENV=us-east-1
 PINECONE_INDEX_NAME=vietnam-travel
 PINECONE_VECTOR_DIM=1536
-
+```
 
 ## 🧩 How to Run
 - Step 1: Load Data into Neo4j
-python load_to_neo4j.py
+`python load_to_neo4j.py`
 
 ✅ Loads dataset (vietnam_travel_dataset.json) as nodes and relationships.
 
 - Step 2: Visualize Graph
-python visualize_graph.py
+`python visualize_graph.py`
 
 ✅ Generates graph visualization (neo4j_viz.html).
 
 - Step 3: Upload Embeddings to Pinecone
-python pinecone_upload.py
+`python pinecone_upload.py`
 
 ✅ Embeds and uploads all items as vectors.
 
 - Step 4: Run Hybrid Chat
-python hybrid_chat.py
+`python hybrid_chat.py`
 
 ✅ Start interacting:
 

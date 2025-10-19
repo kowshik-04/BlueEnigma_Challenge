@@ -55,7 +55,7 @@ User Query -> OpenAI Embedding → Vector Representation -> Pinecone (Semantic S
 ## ⚙️ Setup Instructions  
 
 ### 1️⃣ Clone the Repository
-`git clone [https://github.com/<your-repo>/BlueEnigma_HybridAI.git](https://github.com/kowshik-04/BlueEnigma_Challenge.git)`
+`git clone https://github.com/kowshik-04/BlueEnigma_Challenge.git`
 `cd BlueEnigma_HybridAI`
 
 ### 2️⃣ Create a Virtual Environment
